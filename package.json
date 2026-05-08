@@ -1,0 +1,45 @@
+{
+  "name": "@gklvns/select",
+  "description": "Select is a vanilla JS replacement for select boxes.",
+  "author": {
+    "name": "Georgijs Kļaviņš",
+    "url": "https://github.com/gklvns"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gklvns/select.git"
+  },
+  "keywords": [
+    "select",
+    "autocomplete",
+    "typeahead",
+    "dropdown",
+    "multiselect",
+    "tag",
+    "tagging"
+  ],
+  "license": "MIT",
+  "main": "dist/js/select.js",
+  "style": "dist/css/select.css",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "version": "1.0.0",
+  "jspm": {
+    "main": "js/select",
+    "directories": {
+      "lib": "dist"
+    }
+  },
+  "devDependencies": {
+    "less": "^4.6.4",
+    "terser": "^5.47.1",
+    "vite": "^8.0.11"
+  },
+  "scripts": {
+    "build": "bun run dev && bun run production",
+    "dev": "vite build --mode development",
+    "production": "vite build --mode production"
+  }
+}
