@@ -23,6 +23,7 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: npm whoami
       - run: npm ci
       - run: npm run build
       - run: npm publish
