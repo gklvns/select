@@ -24,11 +24,9 @@ jobs:
         run: |
           bun install
           bun run build
-      - name: Use Node.js 24
-        uses: actions/setup-node@v6
-        with:
-          node-version: 24
       - name: Publish
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          unset NPM_CONFIG_USERCONFIG
+          unset NODE_AUTH_TOKEN
+          rm -f .npmrc
+          npx -p npm@latest npm publish --registry=https://registry.npmjs.org/ --access public --provenance
