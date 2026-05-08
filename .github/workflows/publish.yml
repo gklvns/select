@@ -20,6 +20,7 @@ jobs:
         run: |
           bun install
           bun run build
+          export XDG_CONFIG_HOME="$HOME"
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > $XDG_CONFIG_HOME/.npmrc
           bun publish --access public
         env:
