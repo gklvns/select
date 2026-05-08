@@ -10,15 +10,17 @@ jobs:
     name: Publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: 1.3.10
-      - run: bun install
-      - run: bun run build
-      - name: Publish
+      - name: Build & Publish
         run: |
+          bun install
+          bun run build
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-          bun publish
+          bun publish --access public
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
