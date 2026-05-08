@@ -6,7 +6,6 @@ on:
       - main
 
 permissions:
-  contents: read
   id-token: write
 
 jobs:
@@ -24,9 +23,14 @@ jobs:
         run: |
           bun install
           bun run build
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false
       - name: Publish
         run: |
-          unset NPM_CONFIG_USERCONFIG
-          unset NODE_AUTH_TOKEN
-          rm -f .npmrc
-          npx -p npm@latest npm publish --registry=https://registry.npmjs.org/ --access public --provenance
+          npm ci
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
