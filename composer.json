@@ -1,0 +1,20 @@
+{
+  "name": "gklvns/select",
+  "description": "Select is a vanilla JS based replacement for select boxes.",
+  "type": "component",
+  "license": "MIT",
+  "extra": {
+    "component": {
+      "scripts": [
+        "dist/js/select.js"
+      ],
+      "styles": [
+        "dist/css/select.css"
+      ],
+      "files": [
+        "dist/js/select.js",
+        "dist/css/select.css"
+      ]
+    }
+  }
+}
