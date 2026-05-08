@@ -24,6 +24,7 @@ jobs:
         run: |
           bun install
           bun run build
+          npm install -g npm@latest
           npm publish --access public --provenance
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
