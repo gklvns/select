@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Building
+    name: Publishing
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,6 +17,6 @@ jobs:
       - run: bun install
       - run: bun run build
       - name: Publish
-        run: bun publish
+        run: bun publish -p --access public
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
