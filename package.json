@@ -1,5 +1,5 @@
 {
-  "name": "select",
+  "name": "@gklvns/select",
   "description": "Select is a vanilla JS replacement for select boxes.",
   "private": false,
   "publishConfig": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/gklvns/select.git"
+    "url": "https://github.com/gklvns/select.git"
   },
   "keywords": [
     "select",
@@ -30,7 +30,7 @@
     "src",
     "dist"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "jspm": {
     "main": "js/select",
     "directories": {
