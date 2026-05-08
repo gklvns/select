@@ -2,10 +2,6 @@
   "name": "@gklvns/select",
   "description": "Select is a vanilla JS replacement for select boxes.",
   "private": false,
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  },
   "author": {
     "name": "Georgijs Kļaviņš",
     "url": "https://github.com/gklvns"
