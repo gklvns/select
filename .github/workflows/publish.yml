@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   build:
     name: Publish
@@ -20,7 +24,6 @@ jobs:
         run: |
           bun install
           bun run build
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > $HOME/.npmrc
-          bun publish --access public
+          npm publish --access public --provenance
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
