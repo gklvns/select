@@ -22,6 +22,7 @@ jobs:
           bun run build
           export XDG_CONFIG_HOME="$HOME"
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > $XDG_CONFIG_HOME/.npmrc
+          bunx npm login
           bun publish --access public
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
