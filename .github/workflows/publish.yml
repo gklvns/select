@@ -18,6 +18,16 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
+      - name: Debug token presence
+        run: |
+          if [ -z "$NPM_TOKEN" ]; then
+            echo "TOKEN_MISSING"
+            exit 1
+          else
+            echo "TOKEN_PRESENT"
+          fi
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Configure npm auth
         run: |
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
