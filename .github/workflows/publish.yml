@@ -6,8 +6,9 @@ on:
       - main
 
 permissions:
-  contents: read
   id-token: write
+  contents: write
+  packages: write
 
 jobs:
   publish:
@@ -21,4 +22,4 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm run build
-      - run: npm publish
+      - run: npm publish --access public --provenance
