@@ -1,5 +1,5 @@
 {
-  "name": "@gklvns/select",
+  "name": "select",
   "description": "Select is a vanilla JS replacement for select boxes.",
   "private": false,
   "publishConfig": {
