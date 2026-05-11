@@ -26,7 +26,7 @@
     "src",
     "dist"
   ],
-  "version": "1.0.4",
+  "version": "0.0.0-development",
   "jspm": {
     "main": "js/select",
     "directories": {
